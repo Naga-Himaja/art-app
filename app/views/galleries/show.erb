@@ -1,0 +1,15 @@
+<h2><%= "#{@gallery.name}'s Details"%></h2>
+
+<label>Name:</label>
+<%= @gallery.name%><br>
+
+<label>Location:</label>
+<%= @gallery.location%><br>
+
+<label>Here is a list of all my paintings:</label>
+<ul>
+    <% @gallery.paintings.each do |painting|%>
+    <li><%= link_to painting.name, painting%></li>
+    <%end%>
+</ul>
+<%= button_to "Click Here to delete", @gallery, method: :delete%>
